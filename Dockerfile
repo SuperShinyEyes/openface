@@ -31,5 +31,9 @@ RUN cd ~/openface && \
     pip2 install --user --ignore-installed -r demos/web/requirements.txt && \
     pip2 install -r training/requirements.txt
 
+# Moviepy: https://github.com/pypa/pip/issues/5247#issuecomment-415571153
+# RUN pip install moviepy --ignore-installed urllib3
+RUN pip2 install opencv-python
+
 EXPOSE 8000 9000
 CMD /bin/bash -l -c '/root/openface/demos/web/start-servers.sh'
